@@ -1,26 +1,41 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Container, Header, Segment, Icon, Button, Table } from "semantic-ui-react";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+class App extends React.Component{
+  state = {
+    questions: [ 
+      {id: 1, content: "What is the answer?",},
+      {id: 2, content: "What is the second answer?", },
+    ], 
+    answers: [
+      {id: 1, reply: "This is the answer."},
+      {id: 2, reply: "This is the second answer."}
+  ],
+  }
+
+  render (){
+    return(
+      <Container style={{ paddingTop: "25px" }}>
+        <Header as="h1" color="red" >React Flashcard</Header>
+        <br />
+        <Segment>
+          <Table celled padded>
+            <Table.Header>
+              <Table.Row>
+                <Table.HeaderCell>Question</Table.HeaderCell>
+                <Table.HeaderCell>Question</Table.HeaderCell>
+                <Table.HeaderCell>Question</Table.HeaderCell>
+                <Table.HeaderCell>Question</Table.HeaderCell>
+              </Table.Row>
+            </Table.Header>
+          </Table>
+        </Segment>
+      </Container>
+    )
+  }
 }
+
+
 
 export default App;

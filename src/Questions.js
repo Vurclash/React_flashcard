@@ -1,24 +1,18 @@
 import React from 'react';
+import { Table, } from "semantic-ui-react";
 
 const Questions = ({ questionList, }) => (
   <Table celled padded>
     <Table.Header>
-      <Table.Row>
-        <Table.HeaderCell>Question</Table.HeaderCell>
-        <Table.HeaderCell>Question</Table.HeaderCell>
-        <Table.HeaderCell>Question</Table.HeaderCell>
-        <Table.HeaderCell>Question</Table.HeaderCell>
-      </Table.Row>
+        <Table.HeaderCell>Click the question to see the answer!</Table.HeaderCell>
     </Table.Header>
-  </Table>
 
-  <Table.Body>
-    {
-      questionList.map( question => (
-        <Question key={question.id} {...question} />
-      ))
-    }
-  </Table.Body>
+    <Table.Body>
+      <Table.Row>
+        {questionList.map( title =>( title ))}
+      </Table.Row>
+    </Table.Body>
+  </Table> 
 )
 
 export default Questions

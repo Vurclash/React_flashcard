@@ -9,7 +9,7 @@ const Questions = ({ questionList, }) => (
 
     <Table.Body>
       <Table.Row>
-        {questionList.map( title =>( title ))}
+        
       </Table.Row>
     </Table.Body>
   </Table> 

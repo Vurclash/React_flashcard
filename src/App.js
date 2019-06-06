@@ -1,32 +1,26 @@
 import React from 'react';
-import Questions from './Questions'
-import { Container, Header, Segment, Icon, Button, Table } from "semantic-ui-react";
+import { Route, Switch, } from 'react-router-dom';
+import Home from './components/Home';
+import Flash from './components/Flash';
+import About from './components/About';
+import NoMatch from './components/NoMatch';
+import Navbar from './components/Navbar';
+import { Container, } from 'semantic-ui-react';
 
+const App = (props) => (
+  <> 
+    <Navbar />
+    <Container>
+      <Switch>
+        <Route exact path="/" component={Home} />
+        <Route exact path="/about" component={About} />
+        <Route exact path="/flash" component={Flash} />
+        <Route component={NoMatch} />
+      </Switch>
+    </Container>
+  </>
+);
 
-class App extends React.Component{
-  state = {
-    questions: [ 
-      {id: 1, title: "What is the answer?",},
-      {id: 2, title: "What is the second answer?", },
-    ], 
-    answers: [
-      {id: 1, reply: "This is the answer."},
-      {id: 2, reply: "This is the second answer."}
-    ],
-  }
-
-  render (){
-    return(
-      <Container style={{ paddingTop: "25px" }}>
-        <Header as="h1" color="red" >React Flashcard</Header>
-        <br />
-        <Segment>
-        </Segment>
-        <Questions />
-      </Container>
-    )
-  }
-}
 
 
 

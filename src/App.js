@@ -7,7 +7,7 @@ import NoMatch from './components/NoMatch';
 import Navbar from './components/Navbar';
 import { Container, } from 'semantic-ui-react';
 
-const App = (props) => (
+const App = () => (
   <> 
     <Navbar />
     <Container>
